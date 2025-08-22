@@ -1,17 +1,56 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<ion-menu side="end" contentId="main-content">
+  <ion-header>
     <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
+      <ion-title>Options</ion-title>
+
+      <ion-list>
+        <ion-item>
+          <ion-avatar aria-hidden="true" slot="start">
+            <img alt="" src="../../assets/user.png" />
+          </ion-avatar>
+          <ion-label>Profile</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-avatar aria-hidden="true" slot="start">
+            <img alt="" src="../../assets/edit.png" />
+          </ion-avatar>
+          <ion-label>Edit </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-avatar aria-hidden="true" slot="start">
+            <img alt="" src="../../assets/help.png" />
+          </ion-avatar>
+          <ion-label>Help</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-avatar aria-hidden="true" slot="start">
+            <img alt="" src="../../assets/config.png" />
+          </ion-avatar>
+          <ion-label>Settings</ion-label>
+        </ion-item>
+        </ion-list>
+
     </ion-toolbar>
   </ion-header>
+  <ion-content class="ion-padding">This is ionic F1 app</ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Profile</ion-title>
+      <ion-buttons slot="end">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">Check the calendar races in the 2025 f1 season 🚙</ion-content>
+</div>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
-</ion-content>
+<br><br><br><br><br><br><br>
+<ion-datetime #datetime>
+  <ion-buttons slot="buttons">
+    <ion-button color="danger" (click)="datetime.reset()">Reset</ion-button>
+    <ion-button color="primary" (click)="datetime.cancel()">Never mind</ion-button>
+    <ion-button color="primary" (click)="datetime.confirm()">All Set</ion-button>
+  </ion-buttons>
+</ion-datetime>
